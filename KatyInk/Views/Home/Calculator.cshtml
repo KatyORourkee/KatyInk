@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Ink Calculator";
+}
+
+@section Scripts
+{
+    <script src="~/src/Home/Calculator.js"></script>
+}
+
+<h4 id="calculatorPageTitle" class="pageTitle"> >> Calculator</h4>
+
+<div id="addDiv">
+
+    <div id="addJsDiv">
+        <br/>
+        <h5 class="technologyUsed">JavaScript</h5>
+        <div id="addJsForm">
+            <input id="addJsNumA" type="number" value="0" onchange="addJs()"/> +
+            <input id="addJsNumB" type="number" value="0" onchange="addJs()"/> =
+            <span id="sumJs">0</span>
+        </div>
+    </div>
+    <br/>
+
+    <div id="addRazorDiv">
+        <h5 class="technologyUsed">Razor</h5>
+        @{
+            var numA = 0;
+            var numB = 0;
+            var sumRazor = 0;
+
+            if (IsPost)
+            {
+                numA = Request["addRazorNumA"].AsInt();
+                numB = Request["addRazorNumB"].AsInt();
+
+                if (numA != 0 && numB != 0)
+                {
+                    sumRazor = numA + numB;
+                }
+            }
+        }
+        <form id="addRazorForm" method="post">
+            <input id="addRazorNumA" name="addRazorNumA" type="number" value="@numA"/> +
+            <input id="addRazorNumB" name="addRazorNumB" type="number" value="@numB"/> =
+            <span id="sumRazor" name="sumRazor">@sumRazor</span>
+            <span class="razorAddButtonSpan"><input type="submit" value="Add" /></span>
+        </form>
+    </div>
+    <br/>
+
+    <div id="addKnockoutDiv">
+        <h5 class="technologyUsed">Knockout</h5>
+        <div id="addKnockoutForm">
+            <input id="addKnockoutNumA" name="addKnockoutNumA" type="number" data-bind="value: numKnockoutA"/> +
+            <input id="addKnockoutNumB" name="addKnockoutNumB" type="number" data-bind="value: numKnockoutB"/> =
+            <span id="sumKnockout" name="sumKnockout" data-bind="text: sumKnockout"></span>
+        </div>
+    </div>
+
+</div> @*end add div*@

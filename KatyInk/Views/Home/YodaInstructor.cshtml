@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Ink Yoda Instructor";
+}
+
+@section Scripts
+{
+    <script src="~/src/Home/YodaInstructor.js"></script>
+}
+
+<h4 class="pageTitle"> >> Yoda Instructor</h4>
+
+<div id="yodaInstructorDiv">
+
+    <div id="yodaInstructorKnockoutDiv">
+        <br/>
+        <h5 class="technologyUsed">Knockout</h5>
+        <div id="yodaInput">
+            <textArea class="inputTextArea" id="yoda" type="text" data-bind="value: sentence"></textArea>
+            <br/>
+            <br/>
+            <p id="yodaPair" data-bind="text: yoda"></p>
+            <br/>
+            <input type="submit" value="Teach me, Yoda." data-bind="click: teach"/>
+        </div>
+    </div>
+
+</div>
