@@ -13,17 +13,13 @@ namespace KatyInk.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Calculator()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult YodaInstructor()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }
