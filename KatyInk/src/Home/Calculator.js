@@ -4,7 +4,9 @@
         var self = this;
         self.numKnockoutA = ko.observable(0);
         self.numKnockoutB = ko.observable(0);
-        self.sumKnockout = ko.computed(function () { return +self.numKnockoutA() + +self.numKnockoutB(); });
+        self.sumKnockout = ko.computed(function () {
+            return +self.numKnockoutA() + +self.numKnockoutB(); 
+        });
     };
 
     ko.applyBindings(new viewModel());
